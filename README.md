@@ -11,9 +11,12 @@
 - 🔄 دعم ADSL/ADSL2+ و VDSL/VDSL2 بعتبات مختلفة
 - 🌍 واجهة ثنائية اللغة (عربي/إنكليزي) مع دعم RTL
 - 📱 تصميم متجاوب يعمل على الهواتف والحواسيب
+- 📲 تطبيق ويب تقدمي (PWA) - يعمل أوفلاين
+- ⬇️ زر تثبيت للتثبيت على الشاشة الرئيسية
 - 🎨 واجهة حديثة بتأثير Glassmorphism
 - 📈 عداد زوار مباشر
 - ⚡ تحليل فوري بدون خادم خارجي
+- 🔍 SEO متكامل + Open Graph
 
 ### 📋 القيم المطلوبة من المودم
 | القيمة | الوصف |
@@ -44,6 +47,8 @@
 - Google Fonts (Noto Sans Arabic + Inter)
 - [hitscounter.dev](https://hitscounter.dev/) لعداد الزوار
 - GitHub Actions للنشر التلقائي
+- PWA (Service Worker + Web App Manifest)
+- SEO كامل (Open Graph, Twitter Card, JSON-LD)
 
 ### 🚀 التشغيل المحلي
 ```bash
@@ -64,6 +69,14 @@ adsl-vdsl-line-speed-calculator/
 ├── js/
 │   ├── app.js              # منطق الحاسبة
 │   └── i18n.js             # الترجمة واللغات
+├── img/
+│   ├── logo.svg            # شعار التطبيق
+│   ├── favicon.svg         # أيقونة المتصفح
+│   ├── favicon.ico         # أيقونة ICO
+│   ├── apple-touch-icon.png # أيقونة Apple
+│   └── og-image.png        # صورة Open Graph
+├── manifest.json           # إعدادات PWA
+├── sw.js                   # Service Worker
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml      # نشر GitHub Pages
@@ -84,9 +97,12 @@ An interactive calculator to analyze ADSL/VDSL phone line quality and determine 
 - 🔄 Support for ADSL/ADSL2+ and VDSL/VDSL2 with different thresholds
 - 🌍 Bilingual interface (Arabic/English) with RTL support
 - 📱 Responsive design for mobile and desktop
+- 📲 Progressive Web App (PWA) - works offline
+- ⬇️ Install button for home screen installation
 - 🎨 Modern UI with Glassmorphism effect
 - 📈 Live visitor counter
 - ⚡ Instant client-side analysis (no server required)
+- 🔍 Full SEO + Open Graph integration
 
 ### 📋 Required Modem Values
 | Value | Description |
@@ -117,6 +133,8 @@ An interactive calculator to analyze ADSL/VDSL phone line quality and determine 
 - Google Fonts (Noto Sans Arabic + Inter)
 - [hitscounter.dev](https://hitscounter.dev/) for visitor counter
 - GitHub Actions for auto-deployment
+- PWA (Service Worker + Web App Manifest)
+- Full SEO (Open Graph, Twitter Card, JSON-LD)
 
 ### 🚀 Run Locally
 ```bash
@@ -137,6 +155,14 @@ adsl-vdsl-line-speed-calculator/
 ├── js/
 │   ├── app.js              # Calculator logic
 │   └── i18n.js             # Translations & i18n
+├── img/
+│   ├── logo.svg            # App logo
+│   ├── favicon.svg         # Browser favicon
+│   ├── favicon.ico         # ICO favicon
+│   ├── apple-touch-icon.png # Apple touch icon
+│   └── og-image.png        # Open Graph image
+├── manifest.json           # PWA manifest
+├── sw.js                   # Service Worker
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml      # GitHub Pages deployment

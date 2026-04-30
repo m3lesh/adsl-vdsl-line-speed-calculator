@@ -1,0 +1,35 @@
+{
+    "name": "حاسبة سرعة خط ADSL/VDSL",
+    "short_name": "ADSL/VDSL Calc",
+    "description": "حاسبة تفاعلية لتحليل جودة خط ADSL/VDSL وتحديد إمكانية رفع السرعة",
+    "start_url": "/adsl-vdsl-line-speed-calculator/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#0f172a",
+    "orientation": "portrait-primary",
+    "lang": "ar",
+    "dir": "rtl",
+    "icons": [
+        {
+            "src": "img/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "img/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/logo.svg",
+            "sizes": "200x200",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ],
+    "categories": ["utilities", "productivity"],
+    "screenshots": [],
+    "prefer_related_applications": false
+}

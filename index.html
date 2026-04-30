@@ -3,16 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADSL/VDSL Line Speed Calculator</title>
+    <title>حاسبة سرعة خط ADSL/VDSL | ADSL/VDSL Line Speed Calculator</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="حاسبة تفاعلية لتحليل جودة خط ADSL/VDSL وتحديد إمكانية رفع السرعة. أدخل قيم المودم واحصل على توصيات فورية. | Interactive ADSL/VDSL line speed calculator. Enter modem values for instant line quality analysis.">
+    <meta name="keywords" content="ADSL, VDSL, ADSL2+, VDSL2, line speed calculator, SNR margin, attenuation, خط هاتف, حاسبة سرعة, توهين, نسبة الإشارة">
+    <meta name="author" content="ALBEK">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://m3lesh.github.io/adsl-vdsl-line-speed-calculator/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="حاسبة سرعة خط ADSL/VDSL | ADSL/VDSL Line Speed Calculator">
+    <meta property="og:description" content="حاسبة تفاعلية لتحليل جودة خط ADSL/VDSL وتحديد إمكانية رفع السرعة بناءً على قيم المودم. | Interactive calculator to analyze ADSL/VDSL line quality and speed upgrade potential.">
+    <meta property="og:image" content="https://m3lesh.github.io/adsl-vdsl-line-speed-calculator/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://m3lesh.github.io/adsl-vdsl-line-speed-calculator/">
+    <meta property="og:site_name" content="ADSL/VDSL Line Speed Calculator">
+    <meta property="og:locale" content="ar_IQ">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADSL/VDSL Line Speed Calculator">
+    <meta name="twitter:description" content="Analyze your ADSL/VDSL line quality and determine if it can handle higher speeds.">
+    <meta name="twitter:image" content="https://m3lesh.github.io/adsl-vdsl-line-speed-calculator/img/og-image.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ADSL/VDSL Line Speed Calculator",
+        "description": "Interactive calculator to analyze ADSL/VDSL phone line quality and speed upgrade potential",
+        "url": "https://m3lesh.github.io/adsl-vdsl-line-speed-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "ALBEK",
+            "email": "INFO@ALBEK.CC"
+        },
+        "inLanguage": ["ar", "en"]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 font-sans text-white">
-    <!-- Language Toggle -->
-    <div class="fixed top-4 left-4 z-50">
+    <!-- Language Toggle & Install Button -->
+    <div class="fixed top-4 left-4 z-50 flex flex-col gap-2">
         <button id="langToggle" class="glass px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform">
             English
+        </button>
+        <button id="installBtn" class="hidden glass px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform bg-gradient-to-r from-cyan-500 to-blue-600 text-white" title="تثبيت التطبيق">
+            <span class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <span data-i18n="installBtn">تثبيت</span>
+            </span>
         </button>
     </div>
 
@@ -20,6 +87,7 @@
         <!-- Header -->
         <header class="text-center mb-10">
             <div class="glass rounded-3xl p-8 mb-6">
+                <img src="img/logo.svg" alt="ADSL/VDSL Calculator Logo" class="w-20 h-20 mx-auto mb-4">
                 <h1 class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent" data-i18n="pageTitle">
                     حاسبة سرعة خط ADSL/VDSL
                 </h1>
@@ -212,5 +280,45 @@
 
     <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((registration) => {
+                        console.log('SW registered:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('SW registration failed:', error);
+                    });
+            });
+        }
+
+        // PWA Install Button Logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.classList.remove('hidden');
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                installBtn.classList.add('hidden');
+            }
+            deferredPrompt = null;
+        });
+
+        window.addEventListener('appinstalled', () => {
+            installBtn.classList.add('hidden');
+            deferredPrompt = null;
+        });
+    </script>
 </body>
 </html>

@@ -55,6 +55,7 @@ const translations = {
         totalVisitors: "إجمالي الزوار",
         todayVisitors: "زوار اليوم",
         contactNote: "للملاحظات أو الأخطاء يرجى التواصل معنا:",
+        installBtn: "تثبيت",
     },
     en: {
         pageTitle: "ADSL/VDSL Line Speed Calculator",
@@ -112,6 +113,7 @@ const translations = {
         totalVisitors: "Total Visitors",
         todayVisitors: "Today's Visitors",
         contactNote: "For notes or errors, please contact us:",
+        installBtn: "Install",
     }
 };
 
