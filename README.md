@@ -1,7 +1,5 @@
 # 🌐 حاسبة سرعة خط ADSL/VDSL | ADSL/VDSL Line Speed Calculator
 
-[![Deploy to GitHub Pages](https://github.com/m3lesh/adsl-vdsl-line-speed-calculator/actions/workflows/deploy.yml/badge.svg)](https://github.com/m3lesh/adsl-vdsl-line-speed-calculator/actions/workflows/deploy.yml)
-
 ---
 
 ## 🇮🇶 العربية
@@ -151,5 +149,5 @@ This is an **unofficial** calculator for guidance only. Results are based on gen
 ---
 
 <p align="center">
-  Developed with ❤️ by <a href="mailto:INFO@ALBEK.CC">ALBEK</a> | All rights reserved © 2025
+  Developed with ❤️ by <a href="mailto:INFO@ALBEK.CC">ALBEK</a> | All rights reserved © 2026
 </p>
